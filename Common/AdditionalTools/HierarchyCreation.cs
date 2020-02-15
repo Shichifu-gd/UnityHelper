@@ -5,10 +5,17 @@ public class HierarchyCreation : MonoBehaviour
 {
     private void Start()
     {
+        CreateCommonFolder();
         CreatePrefabsFolder();
         CreateScriptsFolder();
         CreateOthersFolder();
         CreateDataFolder();
+    }
+
+    private void CreateCommonFolder()
+    {
+        if (!File.Exists(Application.dataPath + "/Common")) Directory.CreateDirectory(Application.dataPath + "/Common");
+        C_Prefabs_F_Child();
     }
 
     private void CreatePrefabsFolder()
@@ -20,6 +27,7 @@ public class HierarchyCreation : MonoBehaviour
     private void C_Prefabs_F_Child()
     {
         if (!File.Exists(Application.dataPath + "/Prefabs/Pre_Enemy")) Directory.CreateDirectory(Application.dataPath + "/Prefabs/Pre_Enemy");
+        if (!File.Exists(Application.dataPath + "/Prefabs/Pre_Enemy")) Directory.CreateDirectory(Application.dataPath + "/Prefabs/Pre_Hero");
         if (!File.Exists(Application.dataPath + "/Prefabs/Pre_Other")) Directory.CreateDirectory(Application.dataPath + "/Prefabs/Pre_Other");
         if (!File.Exists(Application.dataPath + "/Prefabs/Pre_UI")) Directory.CreateDirectory(Application.dataPath + "/Prefabs/Pre_UI");
     }
@@ -34,6 +42,7 @@ public class HierarchyCreation : MonoBehaviour
     {
         if (!File.Exists(Application.dataPath + "/Scripts/Scr_Controllers")) Directory.CreateDirectory(Application.dataPath + "/Scripts/Scr_Controllers");
         if (!File.Exists(Application.dataPath + "/Scripts/Scr_Interface")) Directory.CreateDirectory(Application.dataPath + "/Scripts/Scr_Interface");
+        if (!File.Exists(Application.dataPath + "/Scripts/Scr_Interface")) Directory.CreateDirectory(Application.dataPath + "/Scripts/Scr_Enum");
         if (!File.Exists(Application.dataPath + "/Scripts/Scr_Other")) Directory.CreateDirectory(Application.dataPath + "/Scripts/Scr_Other");
     }
 
